@@ -1,0 +1,16 @@
+git
+blueocean
+workflow-aggregator
+workflow-cps
+pipeline-stage-view
+credentials
+credentials-binding
+sonar
+nodejs
+mailer
+email-ext
+docker-workflow
+ws-cleanup
+pipeline-utility-steps
+command-launcher
+explain-error

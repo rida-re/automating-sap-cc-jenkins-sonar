@@ -1,0 +1,40 @@
+services:
+  jenkins:
+    build:
+      context: ./jenkins
+      dockerfile: Dockerfile
+    container_name: jenkins
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - D:/Rida/Rida/Platform_Hybris:/opt/platform_zip
+    networks:
+      - ci-network
+
+  sonarqube:
+    image: sonarqube:latest
+    container_name: sonarqube
+    depends_on:
+      - jenkins
+    ports:
+      - "9000:9000"
+    environment:
+      SONAR_TELEMETRY_ENABLE: "false"
+      SONAR_SEARCH_JAVAADDITIONALOPTS: "-Xms512m -Xmx512m"
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+    networks:
+      - ci-network
+
+volumes:
+  jenkins_home:
+  sonarqube_data:
+  sonarqube_extensions:
+
+networks:
+  ci-network:
