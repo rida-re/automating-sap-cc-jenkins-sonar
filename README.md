@@ -1,5 +1,5 @@
 
-# Automating SAP Commerce Cloud with Jenkins, SonarQube & AI Error Explanation
+# Automating SAP Commerce Cloud with Jenkins, SonarQube & AI-powered Error Explanation
 
 > This project provides a complete CI/CD pipeline for SAP Commerce Cloud (Hybris) using Jenkins, SonarQube, and Docker. It automates build, test, code quality analysis, and deployment to SAP Commerce Cloud (CCV2), with integrated AI-powered error explanations.
 
